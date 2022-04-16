@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "online class",
+        "price": "2500",
+        "description": "it's high time to finish your course from home",
+        "img": "./images/online-class.png"
+    },
+    {
+        "id": 2,
+        "name": "offline-class",
+        "price": "2500",
+        "description": "it's high time to finish your course from home",
+        "img": "./images/offline-class.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Private-class",
+        "price": "2500",
+        "description": "it's high time to finish your course from home",
+        "img": "./images/private-class.jpg"
+    }
+]
