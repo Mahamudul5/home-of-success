@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Services from './components/services/Services';
 import Blog from './components/blog/Blog';
 import Footer from './components/Footer/Footer'
+import DetailsDisplay from './components/DetailsDisplay/DetailsDisplay';
 
 
 
@@ -47,6 +48,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
+        <Route path="/service/:detailsId" element={<DetailsDisplay />} />
         <Route path="blog" element={<Blog />} />
         <Route path="signUp" element={<SignUp />} />
         <Route path="logIn" element={<LogIn />} />

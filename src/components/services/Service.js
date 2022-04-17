@@ -1,11 +1,16 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import "./service.css"
 
 
 
 const Service = ({ service }) => {
-    const { name, img, price, description } = service;
+    const { id, name, img, price } = service;
+    const navigate = useNavigate();
+    const goToDetails = id => {
+        navigate(`/service/${id}`)
+    }
     return (
         <div className='service'>
             <div>
@@ -16,7 +21,7 @@ const Service = ({ service }) => {
                         <Card.Text>
                             <h3 className='text-center'>price:{price}</h3>
                         </Card.Text>
-                        <Button variant="primary d-block mx-auto">Explore</Button>
+                        <Button onClick={() => goToDetails(id)} variant="primary d-block mx-auto">Explore</Button>
                     </Card.Body>
                 </Card>
             </div>

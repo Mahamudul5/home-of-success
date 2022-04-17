@@ -6,7 +6,7 @@ import photo2 from '../images/header2.png'
 import photo3 from '../images/header3.png'
 import Services from '../services/Services';
 import HappyStudent from '../HappyStudent/HappyStudent';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer'; 
 
 const Home = () => {
     return (

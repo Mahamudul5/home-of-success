@@ -4,7 +4,7 @@ import './Footer.css'
 const footer = () => {
     return (
         <div className='bg-dark footer'>
-            <p className='text-center text-light pt-4'> Develop by Mh &copy; 2022</p>
+            <p className='text-center text-light pt-4'> Developed by Mh &copy; 2022</p>
         </div>
     );
 };
