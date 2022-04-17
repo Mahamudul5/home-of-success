@@ -1,25 +1,30 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import logo from '../images/googleLogo.png'
 import './logIn.css'
 
 const LogIn = () => {
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+    const submitForm = event => {
+        event.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        console.log(email, password);
+    }
     return (
         <div className='log-in'>
             <h2 className='text-center text-primary mt-5'>logIn</h2>
-            <form className='w-50 mx-auto'>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Email' />
-
+            <form onSubmit={submitForm} className='w-50 mx-auto'>
+                <div className="mb-3">
+                    <input ref={emailRef} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Email' />
                 </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder='Password' />
+                <div className="mb-3">
+                    <input ref={passwordRef} type="password" className="form-control" id="exampleInputPassword1" placeholder='Password' />
                 </div>
 
-                <button type="submit" class="btn btn-primary ps-5 pe-5 d-block mx-auto">LogIn</button>
+                <button type="submit" className="btn btn-primary ps-5 pe-5 d-block mx-auto">LogIn</button>
                 <p>don't have Account? Please <Link to="/signUp">signUp</Link> </p>
 
             </form>
