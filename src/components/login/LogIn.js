@@ -18,10 +18,10 @@ const LogIn = () => {
             <h2 className='text-center text-primary mt-5'>logIn</h2>
             <form onSubmit={submitForm} className='w-50 mx-auto'>
                 <div className="mb-3">
-                    <input ref={emailRef} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Email' />
+                    <input ref={emailRef} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder='Email' />
                 </div>
                 <div className="mb-3">
-                    <input ref={passwordRef} type="password" className="form-control" id="exampleInputPassword1" placeholder='Password' />
+                    <input ref={passwordRef} type="password" className="form-control" id="exampleInputPassword1" required placeholder='Password' />
                 </div>
 
                 <button type="submit" className="btn btn-primary ps-5 pe-5 d-block mx-auto">LogIn</button>
