@@ -12,6 +12,7 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Services from './components/services/Services';
 import Blog from './components/blog/Blog';
+import Footer from './components/Footer/Footer'
 
 
 
@@ -52,7 +53,7 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
 
-
+      <Footer></Footer>
     </div>
 
   );

@@ -1,5 +1,7 @@
 import React from 'react';
 import { } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import logo from '../images/googleLogo.png'
 
 const LogIn = () => {
     return (
@@ -17,13 +19,18 @@ const LogIn = () => {
                 </div>
 
                 <button type="submit" class="btn btn-primary ps-5 pe-5 d-block mx-auto">LogIn</button>
+                <p>don't have Account? Please <Link to="/signUp">signUp</Link> </p>
 
             </form>
             <div className='d-flex w-50 mx-auto '>
-                <div style={{ height: '1px' }} className='w-50 bg-primary mx-auto mt-3'></div>
+                <div style={{ height: '1px' }} className='w-50 bg-secondary mx-auto mt-3'></div>
                 <p className='mt-1 mx-1'>Or</p>
-                <div style={{ height: '1px' }} className='w-50 bg-primary mx-auto mt-3'></div>
+                <div style={{ height: '1px' }} className='w-50 bg-secondary mx-auto mt-3'></div>
             </div>
+            <button className='btn btn-primary d-block mx-auto'>
+                <img style={{ height: '25px', width: '25px' }} className='me-1' src={logo} alt="" />
+                Google SingIN</button>
+
         </div>
     );
 };

@@ -2,6 +2,7 @@
     display: flex;
     width: 80%;
     margin-top: 20px;
+    height: 85vh;
 
 }
 
@@ -12,6 +13,8 @@
         margin: auto;
         margin-bottom: 20px;
         margin-top: 20px;
+        height: 120vh;
+
 
     }
 }
