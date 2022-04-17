@@ -3,3 +3,17 @@
     height: 300px;
 
 }
+
+.service {
+    border: 1px solid green;
+    border-radius: 10px;
+    margin: 10px;
+    padding-top: 10px;
+}
+
+.service:hover {
+    border: 3px solid green;
+    border-radius: 10px;
+    margin: 10px;
+    padding-top: 10px;
+}

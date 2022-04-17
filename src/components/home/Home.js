@@ -5,6 +5,7 @@ import photo from '../images/header1.png'
 import photo2 from '../images/header2.png'
 import photo3 from '../images/header3.png'
 import Services from '../services/Services';
+import HappyStudent from '../HappyStudent/HappyStudent';
 
 const Home = () => {
     return (
@@ -48,6 +49,7 @@ const Home = () => {
                 </Carousel.Item>
             </Carousel>
             <Services></Services>
+            <HappyStudent></HappyStudent>
         </div>
     );
 };
