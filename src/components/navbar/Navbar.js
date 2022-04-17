@@ -15,11 +15,12 @@ const Navbar = () => {
 
 
             <nav>
+
                 <Link to="/about">About</Link>
                 <Link to="/">Home</Link>
                 <Link to="/logIn">logIn</Link>
                 <Link to="/signUp">signUp</Link>
-                <Link to="*"></Link>
+                <Link to="*">404</Link>
             </nav>
         </div>
     );

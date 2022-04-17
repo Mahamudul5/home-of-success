@@ -25,6 +25,7 @@ function App() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
+              <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="about">About</Nav.Link>
               <Nav.Link as={Link} to="services">Services</Nav.Link>
               <Nav.Link as={Link} to="blog">blog</Nav.Link>
@@ -50,7 +51,7 @@ function App() {
         <Route path="logIn" element={<LogIn />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-      <Services></Services>
+
 
     </div>
 

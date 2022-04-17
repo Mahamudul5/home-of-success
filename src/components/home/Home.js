@@ -4,6 +4,7 @@ import { Carousel } from 'react-bootstrap';
 import photo from '../images/header1.png'
 import photo2 from '../images/header2.png'
 import photo3 from '../images/header3.png'
+import Services from '../services/Services';
 
 const Home = () => {
     return (
@@ -46,7 +47,7 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-
+            <Services></Services>
         </div>
     );
 };
