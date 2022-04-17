@@ -26,7 +26,7 @@ function App() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="about">About</Nav.Link>
+              <Nav.Link as={Link} to="about">About Me</Nav.Link>
               <Nav.Link as={Link} to="services">Services</Nav.Link>
               <Nav.Link as={Link} to="blog">blog</Nav.Link>
               <NavDropdown title="More About" id="collasible-nav-dropdown">
