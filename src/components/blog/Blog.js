@@ -1,8 +1,8 @@
 import React from 'react';
-
+import './blog.css'
 const Blog = () => {
     return (
-        <div>
+        <div className='blog'>
             <h1 className='text-center text-primary mt-3' >Do You Know ?</h1>
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">

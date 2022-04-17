@@ -2,10 +2,11 @@ import React from 'react';
 import { } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../images/googleLogo.png'
+import './logIn.css'
 
 const LogIn = () => {
     return (
-        <div>
+        <div className='log-in'>
             <h2 className='text-center text-primary mt-5'>logIn</h2>
             <form className='w-50 mx-auto'>
                 <div class="mb-3">

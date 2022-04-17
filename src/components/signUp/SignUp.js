@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/googleLogo.png'
+import './signUp.css'
 
 const SignUp = () => {
     return (
-        <div>
+        <div className='sign-up'>
             <div>
                 <h2 className='text-center text-primary mt-5'>Sign Up</h2>
                 <form className='w-50 mx-auto'>
