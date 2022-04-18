@@ -1,29 +1,35 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/googleLogo.png'
 import './signUp.css'
 
 const SignUp = () => {
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+    const reEnterpasswordRef = useRef('');
+    const submitForm = event => {
+        event.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        const reEnterpassword = reEnterpasswordRef.current.value;
+        console.log(email, password, reEnterpassword);
+    }
     return (
         <div className='sign-up'>
             <div>
                 <h2 className='text-center text-primary mt-5'>Sign Up</h2>
-                <form className='w-50 mx-auto'>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Email' />
-
+                <form onSubmit={submitForm} className='w-50 mx-auto'>
+                    <div className="mb-3">
+                        <input ref={emailRef} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Email' />
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder='Password' />
+                    <div className="mb-3">
+                        <input ref={passwordRef} type="password" className="form-control" id="exampleInputPassword1" placeholder='Password' />
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label"> Re-Enter Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder='Re-enter Password' />
+                    <div className="mb-3">
+                        <input ref={reEnterpasswordRef} type="password" className="form-control" id="exampleInputPassword1" placeholder='Re-enter Password' />
                     </div>
 
-                    <button type="submit" class="btn btn-primary ps-5 pe-5 d-block mx-auto">Sign Up</button>
+                    <button type="submit" className="btn btn-primary ps-5 pe-5 d-block mx-auto">Sign Up</button>
                     <p>Already have an Account? Please <Link to="/logIn">LogIn</Link> </p>
 
                 </form>
