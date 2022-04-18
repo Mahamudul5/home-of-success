@@ -1,9 +1,22 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../images/googleLogo.png'
 import './signUp.css'
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init'
 
 const SignUp = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+    if (user) {
+        navigate('/');
+    }
+
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const reEnterpasswordRef = useRef('');
@@ -12,7 +25,8 @@ const SignUp = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const reEnterpassword = reEnterpasswordRef.current.value;
-        console.log(email, password, reEnterpassword);
+        // console.log(email, password, reEnterpassword);
+        createUserWithEmailAndPassword(email, password);
     }
     return (
         <div className='sign-up'>

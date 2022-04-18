@@ -14,9 +14,9 @@ import Services from './components/services/Services';
 import Blog from './components/blog/Blog';
 import Footer from './components/Footer/Footer'
 import DetailsDisplay from './components/DetailsDisplay/DetailsDisplay';
-import app from './firebase.init';
-import { getAuth } from "firebase/auth";
-const auth = getAuth(app);
+
+
+
 
 
 
