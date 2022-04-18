@@ -5,6 +5,8 @@ import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import auth from '../../firebase.init';
 import logo from '../images/googleLogo.png'
 import './logIn.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LogIn = () => {
     const emailRef = useRef('');
@@ -21,11 +23,16 @@ const LogIn = () => {
     if (user) {
         navigate(from, { replace: true });
     }
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const handleReSetPassword = async () => {
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
-        alert('Sent email');
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Email sent .Please Check.');
+        }
+        else {
+            toast('Please Enter valid Email.');
+        }
     }
     const submitForm = event => {
         event.preventDefault();
@@ -75,7 +82,7 @@ const LogIn = () => {
                 <img style={{ height: '25px', width: '25px' }} className='me-1' src={logo} alt="" />
                 Google SingIN</button>
             {loadingText}
-
+            <ToastContainer />
         </div>
     );
 };
