@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import auth from '../../firebase.init';
 import logo from '../images/googleLogo.png'
@@ -27,6 +27,20 @@ const LogIn = () => {
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password);
     }
+    const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
+    if (errorGoogle) {
+        return (
+            <div>
+                <p>Error: {errorGoogle.message}</p>
+            </div>
+        );
+    }
+    if (loadingGoogle) {
+        return <p>Loading...</p>;
+    }
+    if (userGoogle) {
+        navigate('/');
+    }
     return (
         <div className='log-in'>
             <h2 className='text-center text-primary mt-5'>logIn</h2>
@@ -47,7 +61,7 @@ const LogIn = () => {
                 <p className='mt-1 mx-1'>Or</p>
                 <div style={{ height: '1px' }} className='w-50 bg-secondary mx-auto mt-3'></div>
             </div>
-            <button className='btn btn-primary d-block mx-auto'>
+            <button onClick={() => signInWithGoogle()} className='btn btn-primary d-block mx-auto'>
                 <img style={{ height: '25px', width: '25px' }} className='me-1' src={logo} alt="" />
                 Google SingIN</button>
 
