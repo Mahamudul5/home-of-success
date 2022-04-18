@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Home of success .
 
-This project was bootstrapped with [Home of success](https://github.com/facebook/create-react-app).
+Live site: [Home of success](https://home-of-success.netlify.app/).
 
 ## Features:
 
