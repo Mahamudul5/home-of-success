@@ -20,8 +20,8 @@ const Home = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3 className='text-danger'>Join my Online Classes</h3>
-                        <p className='text-danger'>This is the great opportunity Learn from Home.</p>
+                        <h3 className='text-light'>Join my Online Classes</h3>
+                        <p className='text-light'>This is the great opportunity Learn from Home.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -32,8 +32,8 @@ const Home = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3 className='text-danger'>Beautiful Learning Environment</h3>
-                        <p className='text-danger'>Get Knowdge With Happiness And Fun</p>
+                        <h3 className='text-light'>Beautiful Learning Environment</h3>
+                        <p className='text-light'>Get Knowdge With Happiness And Fun</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -44,8 +44,8 @@ const Home = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3 className='text-danger'>Solve Your Problems With Confidence</h3>
-                        <p className='text-danger'>I am Care About Your Weakness.</p>
+                        <h3 className='text-light'>Solve Your Problems With Confidence</h3>
+                        <p className='text-light'>I am Care About Your Weakness.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
