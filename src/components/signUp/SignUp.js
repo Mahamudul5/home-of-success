@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../images/googleLogo.png'
 import './signUp.css'
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 
 const SignUp = () => {
@@ -28,6 +28,20 @@ const SignUp = () => {
         // console.log(email, password, reEnterpassword);
         createUserWithEmailAndPassword(email, password);
     }
+    const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
+    if (errorGoogle) {
+        return (
+            <div>
+                <p>Error: {errorGoogle.message}</p>
+            </div>
+        );
+    }
+    if (loadingGoogle) {
+        return <p>Loading...</p>;
+    }
+    if (userGoogle) {
+        navigate('/');
+    }
     return (
         <div className='sign-up'>
             <div>
@@ -52,7 +66,7 @@ const SignUp = () => {
                     <p className='mt-1 mx-1'>Or</p>
                     <div style={{ height: '1px' }} className='w-50 bg-secondary mx-auto mt-3'></div>
                 </div>
-                <button className='btn btn-primary d-block mx-auto'>
+                <button onClick={() => signInWithGoogle()} className='btn btn-primary d-block mx-auto'>
                     <img style={{ height: '25px', width: '25px' }} className='me-1' src={logo} alt="" />
                     Google SignUp </button>
 
