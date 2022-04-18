@@ -1,16 +1,16 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Home of success](https://github.com/facebook/create-react-app).
 
-## Features
+## Features:
 
-- navbar.you can navigate any where.
+- navbar you can navigate any where.
 - In mobile divice you can also use savbar with three dots.
 - you can sign up my site for more information.
 - you can buy any course of mine in site.
 - you can sign in with your gmail account.
 
-## Used Tecnology in this site
+## Used Tecnology in this site:
  
 - vanila css.
 - react.
