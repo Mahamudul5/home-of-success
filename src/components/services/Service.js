@@ -6,7 +6,7 @@ import "./service.css"
 
 
 const Service = ({ service }) => {
-    const { id, name, img, price } = service;
+    const { id, name, img, price, description } = service;
     const navigate = useNavigate();
     const goToDetails = id => {
         navigate(`/service/${id}`)
@@ -17,9 +17,10 @@ const Service = ({ service }) => {
                 <Card style={{ width: '18rem' }} className='mb-5 mx-auto'>
                     <Card.Img className='img-fluid' variant="top" src={img} />
                     <Card.Body>
-                        <Card.Title className='text-center'>{name}</Card.Title>
+                        <Card.Title className='text-center'><h3>{name}</h3></Card.Title>
                         <Card.Text>
-                            <h3 className='text-center'>price:{price}</h3>
+                            <h5 className='text-center'>price:{price}</h5>
+                            <p className='text-center'>{description}</p>
                         </Card.Text>
                         <Button onClick={() => goToDetails(id)} variant="primary d-block mx-auto">Explore</Button>
                     </Card.Body>
