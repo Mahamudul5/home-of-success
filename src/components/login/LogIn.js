@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import auth from '../../firebase.init';
 import logo from '../images/googleLogo.png'
@@ -21,6 +21,12 @@ const LogIn = () => {
     if (user) {
         navigate(from, { replace: true });
     }
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const handleReSetPassword = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
+    }
     const submitForm = event => {
         event.preventDefault();
         const email = emailRef.current.value;
@@ -30,14 +36,15 @@ const LogIn = () => {
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
     let errorText;
     if (error || errorGoogle) {
-        return (
-            errorText = <div>
-                <p className='text-danger'>Error:{error?.message} {errorGoogle?.message}</p>
-            </div>
-        );
+
+        errorText = <div>
+            <p className='text-danger text-center'>Error:{error?.message} {errorGoogle?.message}</p>
+        </div>
+
     }
+    let loadingText;
     if (loading || loadingGoogle) {
-        return <p>Loading...</p>;
+        loadingText = <p className='text-center'>Loading...</p>;
     }
     if (userGoogle) {
         navigate('/');
@@ -54,7 +61,8 @@ const LogIn = () => {
                 </div>
 
                 <button type="submit" className="btn btn-primary ps-5 pe-5 d-block mx-auto">LogIn</button>
-                <p>don't have Account? Please <Link to="/signUp">signUp</Link> </p>
+                <p>don't have Account? Please <Link className='text-decoration-none' to="/signUp">signUp</Link> </p>
+                <p>Forgot Password ?<button className='btn btn-link text-decoration-none' onClick={handleReSetPassword}>Reset password </button></p>
 
             </form>
             <div className='d-flex w-50 mx-auto '>
@@ -66,6 +74,7 @@ const LogIn = () => {
             <button onClick={() => signInWithGoogle()} className='btn btn-primary d-block mx-auto'>
                 <img style={{ height: '25px', width: '25px' }} className='me-1' src={logo} alt="" />
                 Google SingIN</button>
+            {loadingText}
 
         </div>
     );

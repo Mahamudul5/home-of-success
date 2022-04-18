@@ -11,11 +11,12 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const navigate = useNavigate();
     if (user) {
         navigate('/');
     }
+
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -31,14 +32,15 @@ const SignUp = () => {
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
     let errorText;
     if (error || errorGoogle) {
-        return (
-            errorText = <div>
-                <p className='text-danger'>Error:{error?.message} {errorGoogle?.message}</p>
-            </div>
-        );
+
+        errorText = <div>
+            <p className='text-danger text-center'>Error:{error?.message} {errorGoogle?.message}</p>
+        </div>
+
     }
+    let loadingText;
     if (loading || loadingGoogle) {
-        return <p>Loading...</p>;
+        loadingText = <p className='text-center'>Loading...</p>;
     }
     if (userGoogle) {
         navigate('/');
@@ -71,6 +73,7 @@ const SignUp = () => {
                 <button onClick={() => signInWithGoogle()} className='btn btn-primary d-block mx-auto'>
                     <img style={{ height: '25px', width: '25px' }} className='me-1' src={logo} alt="" />
                     Google SignUp </button>
+                {loadingText}
 
             </div>
         </div>
